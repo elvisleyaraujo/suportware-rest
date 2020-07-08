@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: prod
+---
+spring:
+  profiles: prod
+app:
+  datasource:
+    jdbcUrl: jdbc:sqlserver://localhost:1433;database=master
+    username: syscpd
+    password: (sw):$ajr:(*)
+
+params:
+  path:
+    arquivo: D:\sys.run\softinstall\ftp
+

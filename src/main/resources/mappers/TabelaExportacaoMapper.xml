@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="br.com.suportware.rest.mapper.TabelasExportacaoMapper">
+
+    <select id="recuperarTabelasExportacao" resultType="br.com.suportware.rest.model.TabelasExportacao">
+        select
+          exp00_tabela as nomeTabela,
+          exp00_export as exportar,
+          exp00_defloj as porLoja,
+          exp00_database as nomeDatabase,
+          exp00_tbl_pesq as nomeTabelaConsulta
+        from sg01cadpdv.dbo.tblexp00
+        where coalesce(exp00_export,00) = 01
+    </select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="br.com.suportware.rest.mapper.FilialMapper">
+
+    <select id="recuperarFiliais" resultType="br.com.suportware.rest.model.Filial">
+
+        select
+              fil00_filpdv as id
+        from sg01cadastro.dbo.cadfil00
+        where fil00_filpdv>00
+
+    </select>
+
+</mapper>

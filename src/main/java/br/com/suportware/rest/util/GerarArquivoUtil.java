@@ -12,6 +12,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 @Slf4j
@@ -49,11 +50,11 @@ public class GerarArquivoUtil {
                     return false;
                 }
 
-                //try {
-                //    Files.delete(arquivo.toPath());
-                //} catch (Exception e){
-                //    log.error("ERRO AO DELETAR ARQUIVO FILIAL {} DATA {}", filial.getId(), dataMovimento);
-                //}
+                try {
+                    Files.delete(arquivo.toPath());
+                } catch (Exception e){
+                    log.error("ERRO AO DELETAR " + arquivo.toPath());
+                }
             }
 
             return true;

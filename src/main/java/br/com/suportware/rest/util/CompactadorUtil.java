@@ -21,7 +21,7 @@ public class CompactadorUtil {
          ZipOutputStream saida = new ZipOutputStream(new BufferedOutputStream(destino));
     ) {
 
-      File file = new File();
+      File file = new File(arqSaida);
       FileInputStream streamDeEntrada = new FileInputStream(file);
       BufferedInputStream origem = new BufferedInputStream(streamDeEntrada, TAMANHO_BUFFER);
 

@@ -17,17 +17,15 @@ import java.util.List;
 public class ConcentradorService {
 
     private final TabelasExportacaoMapper tabelasExportacaoMapper;
-    private final FilialMapper filialMapper;
     private final TabelaArquivoMapper tabelaArquivoMapper;
     private final GerarArquivoUtil gerarArquivoUtil;
-    private List<Filial> filialList;
+    private final List<Filial> filialList;
 
     public ConcentradorService(TabelasExportacaoMapper tabelasExportacaoMapper,
                                FilialMapper filialMapper,
                                TabelaArquivoMapper tabelaArquivoMapper,
                                GerarArquivoUtil gerarArquivoUtil) {
         this.tabelasExportacaoMapper = tabelasExportacaoMapper;
-        this.filialMapper = filialMapper;
         this.tabelaArquivoMapper = tabelaArquivoMapper;
         this.gerarArquivoUtil = gerarArquivoUtil;
 
@@ -39,11 +37,10 @@ public class ConcentradorService {
         List<TabelasExportacao> tabelasExportacaoList =  tabelasExportacaoMapper.recuperarTabelasExportacao();
 
         for (TabelasExportacao tabelasExportacao : tabelasExportacaoList){
-            //Gerar Arquivo
             gerarArquivo(tabelasExportacao);
         }
 
-        return false;
+        return true;
     }
 
     private boolean gerarArquivo(TabelasExportacao tabelasExportacao){

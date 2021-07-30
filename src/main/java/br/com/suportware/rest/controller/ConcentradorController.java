@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/concentrador")
 public class ConcentradorController {
 
-    @Autowired
-    private ConcentradorService concentradorService;
+    private final ConcentradorService concentradorService;
+
+    public ConcentradorController(ConcentradorService concentradorService) {
+        this.concentradorService = concentradorService;
+    }
 
     @GetMapping(value="geracaoarquivopdv")
     public ResponseEntity geracaoArquivoPDV(){
